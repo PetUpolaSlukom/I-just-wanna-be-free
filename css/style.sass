@@ -1,0 +1,76 @@
+*
+    font-family: "Neue Haas Unica",sans-serif
+    font-size: 0.9rem
+    text-transform: uppercase
+$dark: #343a40
+$light: #ffffff
+::placeholder 
+  color: $light
+.b-dark
+    background-color: $dark
+    color: $light
+.b-light
+    background-color: $light
+    color: $dark
+.p-t-50
+    padding-top: 50px
+.font-s-3
+    font-size: 3rem
+.font-s-2
+    font-size: 1.8rem
+#wrapper
+    width: 100%
+    margin: 0 auto
+    padding: 0px
+    nav
+        position: fixed
+        z-index: 1
+        #logoNav
+            width: 20%
+    .main
+        background-image: url("../img/main.jpeg")
+        background-position: center
+        background-repeat: repeat, no-repeat
+        background-size: cover
+        height: 600px
+        .main-text
+            bottom: 20px
+    .tour-date
+        table 
+            border-collapse: collapse
+            width: 100%
+            td, th 
+                padding: 10px
+                a
+                    padding: 5px 20px
+                    border: 1px solid $dark
+                    &:hover
+                        color: $dark
+                        background-color: $light
+                        text-decoration: none 
+    .newsletter
+        background-image: url("../img/newsletter.png")
+        background-position: center
+        background-repeat: repeat, no-repeat
+        background-size: cover
+        height: 400px
+        #newsEmail
+            margin: 0px auto
+            display: block
+            padding: 12px 14px
+            border: none
+            border-bottom: 2px solid $light
+            width: 100%
+            line-height: 5
+            resize: none
+            background: transparent
+            color: $light
+            font-size: 1.5em
+        #newsSend
+            background-color: $light
+            color: $dark
+            border: 2px solid $light
+            &:hover
+                color: $light
+                background: transparent
+

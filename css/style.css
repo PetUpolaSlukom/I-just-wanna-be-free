@@ -1,0 +1,124 @@
+* {
+  font-family: "Neue Haas Unica",sans-serif;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+}
+
+::-webkit-input-placeholder {
+  color: #ffffff;
+}
+
+:-ms-input-placeholder {
+  color: #ffffff;
+}
+
+::-ms-input-placeholder {
+  color: #ffffff;
+}
+
+::placeholder {
+  color: #ffffff;
+}
+
+.b-dark {
+  background-color: #343a40;
+  color: #ffffff;
+}
+
+.b-light {
+  background-color: #ffffff;
+  color: #343a40;
+}
+
+.p-t-50 {
+  padding-top: 50px;
+}
+
+.font-s-3 {
+  font-size: 3rem;
+}
+
+.font-s-2 {
+  font-size: 1.8rem;
+}
+
+#wrapper {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0px;
+}
+
+#wrapper nav {
+  position: fixed;
+  z-index: 1;
+}
+
+#wrapper nav #logoNav {
+  width: 20%;
+}
+
+#wrapper .main {
+  background-image: url("../img/main.jpeg");
+  background-position: center;
+  background-repeat: repeat, no-repeat;
+  background-size: cover;
+  height: 600px;
+}
+
+#wrapper .main .main-text {
+  bottom: 20px;
+}
+
+#wrapper .tour-date table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#wrapper .tour-date table td, #wrapper .tour-date table th {
+  padding: 10px;
+}
+
+#wrapper .tour-date table td a, #wrapper .tour-date table th a {
+  padding: 5px 20px;
+  border: 1px solid #343a40;
+}
+
+#wrapper .tour-date table td a:hover, #wrapper .tour-date table th a:hover {
+  color: #343a40;
+  background-color: #ffffff;
+  text-decoration: none;
+}
+
+#wrapper .newsletter {
+  background-image: url("../img/newsletter.png");
+  background-position: center;
+  background-repeat: repeat, no-repeat;
+  background-size: cover;
+  height: 400px;
+}
+
+#wrapper .newsletter #newsEmail {
+  margin: 0px auto;
+  display: block;
+  padding: 12px 14px;
+  border: none;
+  border-bottom: 2px solid #ffffff;
+  width: 100%;
+  line-height: 5;
+  resize: none;
+  background: transparent;
+  color: #ffffff;
+  font-size: 1.5em;
+}
+
+#wrapper .newsletter #newsSend {
+  background-color: #ffffff;
+  color: #343a40;
+  border: 2px solid #ffffff;
+}
+
+#wrapper .newsletter #newsSend:hover {
+  color: #ffffff;
+  background: transparent;
+}
+/*# sourceMappingURL=style.css.map */
