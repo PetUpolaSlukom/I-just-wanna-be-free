@@ -16,16 +16,14 @@
 </head>
 <body>
   <nav class="navbar navbar-expand-sm navbar-dark bg-light d-flex justify-content-around">
-    <!-- sve sto sam dodao u html je ovaj div -->
     <div id="responsive-meni" class="w-100 position-absolute d-sm-none">
       <ul id="responsive-meni-ul" class="bg-light w-100">
         
       </ul>
     </div>
 
-    <a href="#" class="navbar-brand"><img src="img/logo.jpg" class="mw-100" alt="logo"/></a>
+    <a href="index.html" class="navbar-brand"><img src="img/logo.jpg" class="mw-100" alt="logo"/></a>
 
-    <!-- a ovde sam samo sklonio te neke js funkcionalnosti za dugme od bootsa, i dole sam morao da jquery promenim u obican .min umesto .slim.min jer nema neke stvari koje su potrebne-->
     <button class="navbar-toggler bg-info">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -42,20 +40,23 @@
             <div class="container pt-4">
               <div class="row">
                   <div class="col-12">
-                        <h1>Poručite brzo i jednostavno!</h1>
-                        <span class="pb-2 border-bottom d-block">Popunite formular ispod kako bi poručili željeni namestaj.</span>
-                    </div>
-                    <div class="col-12">
-                        
+                      <h1>Poručite brzo i jednostavno!</h1>
+                      <span class="pb-2 border-bottom d-block">Popunite formular ispod kako bi poručili željeni namestaj.</span>
+                  </div>
+                  <div class="col-12 mt-4">
+                    <p class="d-inline">Za odlazak na katalog klikni </p><a href="katalog.html" class="text-info" ><u>ovde.</u></a>
+                  </div>
+                  <div class="col-12">
+                      <form name="porucivanje" action="#" method="GET">
                         <div class="row mx-4">
                             <div class="col-12 mb-2">
                             <label class="order-form-label mt-2">Lični podaci</label>
                             </div>
                             <div class="col-12 col-sm-6">
-                            <input class="order-form-input border border-info" placeholder="Ime" required/>
+                            <input name="ime" class="order-form-input border border-info" placeholder="Ime" required/>
                             </div>
                             <div class="col-12 col-sm-6 mt-2 mt-sm-0">
-                            <input class="order-form-input border border-info" placeholder="Prezime" required/>
+                            <input name="prezime" class="order-form-input border border-info" placeholder="Prezime" required/>
                             </div>
                         </div>
                 
@@ -64,16 +65,16 @@
                             <label class="order-form-label mt-2">Naziv nameštaja i tip</label>
                             </div>
                             <div class="col-12">
-                            <input class="order-form-input border border-info" placeholder="Npr: 'Lean' Sto" required/>
+                            <input name="tip" class="order-form-input border border-info" placeholder="Npr: Lean Sto" required/>
                             </div>
                         </div>
                 
                         <div class="row mt-3 mx-4">
                             <div class="col-12">
-                            <label class="order-form-label mt-2">Datum poručivanja</label>
+                            <label class="order-form-label mt-2">Datum dostave</label>
                             </div>
                             <div class="col-12">
-                            <input class="order-form-input border border-info" placeholder="Npr: 20.4.2020." id="date" required/>
+                            <input name="datum" class="order-form-input border border-info" placeholder="Npr: 20.4.2020." id="date" required/>
                             </div>
                         </div>
                 
@@ -82,13 +83,7 @@
                             <label class="order-form-label mt-2">Adresa</label>
                             </div>
                             <div class="col-12">
-                            <input class="order-form-input border border-info" placeholder="Ulica i broj" required/>
-                            </div>
-                            <div class="col-12 col-sm-6 mt-2 pr-sm-2">
-                            <input class="order-form-input border border-info" placeholder="Grad i poštanski broj" required/>
-                            </div>
-                            <div class="col-12 col-sm-6 mt-2 pl-sm-0">
-                            <input class="order-form-input border border-info" placeholder="Država" required/>
+                            <input name="adresa" class="order-form-input border border-info" placeholder="Adresa i mesto (Npr: Svetog Save 6, Beograd)" required/>
                             </div>
                         </div>
                 
@@ -105,12 +100,11 @@
                             <div class="col-12">
                                 <button type="button" id="btnSubmit" class="btn btn-lg btn-info btn-min-width d-block mx-auto btn-submit">Poruči</button>
                             </div>
-                            <div class="col-12 mt-4">
-                              <p class="d-inline">Za odlazak na katalog klikni </p><a href="katalog.html" class="text-info" ><u>ovde.</u></a>
-                          </div>
+                            
                         </div>
-                    </div>
-                </div>
+                    </form>
+                  </div>
+              </div>
             </div>
         </section>
         </div>
@@ -126,19 +120,19 @@
     <footer>
         <div class="container-fluid pb-0">
           <div class="kontakt border-top border-dark container-fluid d-flex flex-wrap justify-content-between col-10 p-50-0">
-            <form class="p-50-0 pt-0 d-inline col-12 col-md-6 col-lg-5" action="#" method="GET">
+            <form name="kontakt" class="p-50-0 pt-0 d-inline col-12 col-md-6 col-lg-5" action="#" method="GET">
               <h4 class="text-info mb-4 text-center">Za pitanja</h4>
               <div class="container-fluid col-12">
-                <div class="col d-flex">
+                <div>
                   <input type="text" name="name" id="name" class="container brd-none border-bottom border-info" placeholder="Ime i prezime">
                 </div>
-                <div class="col d-flex">
+                <div>
                   <input type="email" name="mail" id="mail" class="container brd-none border-bottom border-info mt-2" placeholder="Email">
                 </div>
-                <div class="col d-flex">
+                <div>
                   <textarea name="text" id="text" cols="22" maxlength="200"  rows="3" class="container brd-none border-bottom border-info mt-2" placeholder="Poruka..."></textarea>
                 </div>
-                <div class="d-flex justify-content-center mt-3">
+                <div class="d-flex align-items-center flex-column">
                     <input type="submit" id="button" class="btn btn-info" value="Pošalji">
                 </div>      
               </div>
@@ -174,7 +168,7 @@
             </div>
           </div> 
           <div class="container col-12">
-            <a href="oAutoru.html" class="d-inline text-info">O autoru</a>
+            <a href="dokumentacija.pdf" class="d-inline text-info">Dokumentacija</a>
             <a href="css/style.sass" class="d-inline text-info ml-3 float-right">sass</a>
             <a href="sitemap.xml" class="d-inline text-info ml-3 float-right">sitemap</a>
             <a href="css/style.css" class="d-inline text-info float-right">css</a>
@@ -182,11 +176,11 @@
           </div> 
         </div>
     </footer>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
         crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
         <script src="js/main.js"></script>
 </body>
+</html>

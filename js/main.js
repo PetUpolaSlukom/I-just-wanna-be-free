@@ -21,12 +21,12 @@ $(document).ready(function() {
     if(stranica.indexOf('blog') != -1) {
         ispisSlajdera();
         ispisNovosti();
+        var indeks = 0;
+        showSlides();
 	}
 
-	
 
     //********************************************* */
-
 
 //KOD ZA RESPONSIVE MENI
 $(".navbar-toggler").click(function(){
@@ -35,7 +35,7 @@ $(".navbar-toggler").click(function(){
             "left" : "0",
             "top" : `${$(".navbar").height()}px`
         })
-        .toggle(500);
+        .toggle();
 });
 
 
@@ -149,8 +149,6 @@ function ispisSlajdera() {
     
     
 }
-var index = 0;
-showSlides(); 
 
 function showSlides() {
     var i;
@@ -160,13 +158,13 @@ function showSlides() {
     for (i = 0; i < slides.length; i++) {
         slides[i].style.display = "none";  
     }
-    index++;
-    if (index > slides.length) {index = 1}    
+    indeks++;
+    if (indeks > slides.length) {indeks = 1;}    
     for (i = 0; i < dots.length; i++) {
         dots[i].className = dots[i].className.replace("active", "");
     }
-    slides[index-1].style.display = "block";  
-    dots[index-1].className += " active";
+    slides[indeks-1].style.display = "block";  
+    dots[indeks-1].className += " active";
     setTimeout(showSlides, 3000); 
 }
 
@@ -281,6 +279,170 @@ function ispisProizvida() {
     }
 }
 
+//Validacija forme
+    function resetovanjeForme(forma){
+        $(".forma-greska").remove();
+        $(".forma-uspeh").remove();
 
+    }
+    function greska(element, poruka){
+        $(`<span class="forma-greska">${poruka}</span>`).insertAfter($(element));
+    }
+    function uspesno(forma, element, poruka) {
+        $(`<span class="forma-uspeh">${poruka}</span>`).insertAfter($(element));
+        forma.reset();
+
+    }
+    function inputPrazno(element, naziv){
+        if(element.value.length == 0){
+            greska(element,`Polje za ${naziv} ne sme biti prazno.`);
+            return true;
+        }
+        return false;
+    }
+    let regImePrezime = /^[A-ZŠĐŽĆČ][a-zšđžćč]{2,15}(\s[A-ZŠĐŽĆČ][a-zšđžćč]{2,15}){0,2}$/;
+    let regEmail = /^[a-z]((\.|-|_)?[a-z0-9]){2,}@[a-z]((\.|-|_)?[a-z0-9]+){2,}\.[a-z]{2,6}$/i;
+
+    //Forma za porucivaje
+    
+    $("#btnSubmit").click(validirajPorucivanje);
+    function validirajPorucivanje(){
+        resetovanjeForme(document.porucivanje);
+
+        let regTip = /\w+/;
+        let regDatum = /^(0?[1-9]|[12]\d|3[01])\.(0?[1-9]|1[012])\.(19\d\d|20([01]\d|2[01]))\.$/;
+        let regAdresa = /^[A-z\dŠĐŽĆČšđžćč\.]+(\s[A-z\dŠĐŽĆČšđžćč\.]+)+,(\s[A-zŠĐŽĆČšđžćč]+)+$/;
+        
+        let indikatorGreske = false;
+
+        //Ime
+        if(inputPrazno(document.porucivanje.ime, "ime")){
+            indikatorGreske = true;
+        }
+        else {
+            if(!regImePrezime.test(document.porucivanje.ime.value)){
+                greska(document.porucivanje.ime,"Ime nije dobro napisano.");
+                indikatorGreske = true;
+            }
+        }
+        //Prezime
+        if(inputPrazno(document.porucivanje.prezime, "prezime")){
+            indikatorGreske = true;
+        }
+        else {
+            if(!regImePrezime.test(document.porucivanje.prezime.value)){
+                greska(document.porucivanje.prezime,"Prezime nije dobro napisano.");
+                indikatorGreske = true;
+            }
+        }
+        //Tip
+        if(inputPrazno(document.porucivanje.tip, "tip nameštaja")){
+            indikatorGreske = true;
+        }
+        else {
+            if(!regTip.test(document.porucivanje.tip.value)){
+                greska(document.porucivanje.tip,"Naziv i tip nameštaja nisu dobro napisani.");
+                indikatorGreske = true;
+            }
+        }
+        //Datum
+        if(inputPrazno(document.porucivanje.datum, "datum")){
+            indikatorGreske = true;
+        }
+        else {
+            if(!regDatum.test(document.porucivanje.datum.value)){
+                greska(document.porucivanje.datum,"Datum nije dobro napisan.");
+                indikatorGreske = true;
+            }
+            else {
+                let stringDatum = document.porucivanje.datum.value.substring(0,document.porucivanje.datum.value.length-1);
+                let nizD = stringDatum.split(".");
+                let datum1 = new Date();
+                datum1.setFullYear(Number(nizD[2]));
+                datum1.setMonth(Number(nizD[1])-1);
+                datum1.setDate(Number(nizD[0]));
+                let datum2 = new Date();
+                if(datum1 < datum2){
+                    greska(document.porucivanje.datum, "Ne može se uneti prošli datum.");
+                    indikatorGreske = true;
+                }
+
+            }
+
+        }
+        //Adresa
+        if(inputPrazno(document.porucivanje.adresa, "adresu")){
+            indikatorGreske = true;
+        }
+        else {
+            if(!regAdresa.test(document.porucivanje.adresa.value)){
+                greska(document.porucivanje.adresa,"Adresa nije dobro napisana.");
+                indikatorGreske = true;
+            }
+        }
+
+        //Uslovi checkbox
+        if(!($("#defaultChecked2").is(":checked"))){
+            greska($("#defaultChecked2").parent(),"Morate prihvatiti uslove korišćenja.");
+            indikatorGreske = true;
+        }
+
+        if(!indikatorGreske){
+            uspesno(document.porucivanje, $("#btnSubmit"), "Uspešno ste naručili.");
+        }
+
+
+    }
+
+
+    //Forma za kontakt
+
+    $(document.kontakt).on("submit", function(event){
+        validirajKontakt(event);
+    });
+
+    function validirajKontakt(event){
+        event.preventDefault();
+        resetovanjeForme(document.kontakt);
+                
+        let indikatorGreske = false;
+
+        //Ime i Prezime
+        if(inputPrazno(document.kontakt.name, "ime i prezime")){
+            indikatorGreske = true;
+        }
+        else {
+            if(!regImePrezime.test(document.kontakt.name.value)){
+                greska(document.kontakt.ime,"Ime i prezime nisu dobro napisani.");
+                indikatorGreske = true;
+            }
+        }
+        
+        //Email
+        if(inputPrazno(document.kontakt.mail, "imejl adresu")){
+            indikatorGreske = true;
+        }
+        else {
+            if(!regEmail.test(document.kontakt.mail.value)){
+                greska(document.kontakt.mail,"Imejl adresa nije dobro napisana.");
+                indikatorGreske = true;
+            }
+        }
+        
+        //Poruka
+        if(inputPrazno(document.kontakt.text, "poruku")){
+            indikatorGreske = true;
+        }
+        else {
+            if(document.kontakt.text.value.length < 25){
+                greska(document.kontakt.text,"Poruka mora sadržati bar 25 karaktera.");
+                indikatorGreske = true;
+            }
+        }
+        if(!indikatorGreske){
+            uspesno(document.kontakt, $("#button"), "Uspešno ste poslali poruku.");
+        }
+    }
+    
 
 })

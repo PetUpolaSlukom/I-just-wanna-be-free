@@ -70,7 +70,7 @@ textarea {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
 }
 
 .proizvodi a:hover {
@@ -79,7 +79,7 @@ textarea {
 
 .proizvodi a img:hover {
   -webkit-transform: scale(1.15);
-          transform: scale(1.15);
+  transform: scale(1.15);
 }
 
 .o-nama {
@@ -112,11 +112,13 @@ textarea {
 #prikaziViseBlog p {
   margin: 0px;
 }
+
 .slideshow-container {
   max-width: 1000px;
   position: relative;
   margin: auto;
 }
+
 .text {
   color: #f2f2f2;
   font-size: 30px;
@@ -126,6 +128,7 @@ textarea {
   width: 100%;
   text-align: center;
 }
+
 .numbertext {
   color: #f2f2f2;
   font-size: 12px;
@@ -134,80 +137,7 @@ textarea {
   top: 0;
 }
 
-/* The dots/bullets/indicators */
 .dot {
-  height: 15px;
-  width: 15px;
-  margin: 0 2px;
-  background-color: #bbb;
-  border-radius: 50%;
-  display: inline-block;
-  transition: background-color 0.6s ease;
-}
-
-.active {
-  background-color: #717171;
-}
-.mySlides img{
-  width: 100%;
-}
-#dots{
-  text-align: center;
-}
-.mySlides {display: none;}
-.fade {
-  -webkit-animation-name: fade;
-  -webkit-animation-duration: 1.5s;
-  animation-name: fade;
-  animation-duration: 3s;
-}
-
-@-webkit-keyframes fade {
-  from {opacity: .4} 
-  to {opacity: 1}
-}
-
-@keyframes fade {
-  from {opacity: .4} 
-  to {opacity: 1}
-}
-/* body .sl-sh .slideshow-container {
-  max-width: 1000px;
-  position: relative;
-  margin: auto;
-}
-
-body .sl-sh .slideshow-container .mySlides {
-  display: none;
-}
-
-body .sl-sh .slideshow-container .mySlides .mySlides img {
-  width: 100%;
-}
-
-body .sl-sh .slideshow-container .mySlides .text {
-  color: #f2f2f2;
-  font-size: 30px;
-  padding: 8px 12px;
-  position: absolute;
-  bottom: 8px;
-  width: 100%;
-  text-align: center;
-}
-
-body .sl-sh .slideshow-container .fade {
-  -webkit-animation-name: fade;
-  -webkit-animation-duration: 1.5s;
-  animation-name: fade;
-  -webkit-animation-duration: 3s;
-          animation-duration: 3s;
-}
-
-#dots {
-  text-align: center;
-}
-
-#dots .dot {
   height: 15px;
   width: 15px;
   margin: 0 2px;
@@ -218,7 +148,55 @@ body .sl-sh .slideshow-container .fade {
   transition: background-color 0.6s ease;
 }
 
-#dots .dot .active {
+.active {
   background-color: #717171;
-} */
+}
+
+.mySlides {
+  display: none;
+}
+
+.mySlides img {
+  width: 100%;
+}
+
+#dots {
+  text-align: center;
+}
+
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+}
+
+@-webkit-keyframes fade {
+  from {
+    opacity: .4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: .4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.forma-greska {
+  display: block;
+  color: #ff0000;
+  opacity: .7;
+}
+
+.forma-uspeh {
+  color: #17a2b8;
+}
 /*# sourceMappingURL=style.css.map */
