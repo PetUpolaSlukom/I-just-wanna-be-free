@@ -1,127 +1,224 @@
+@font-face {
+  font-family: myFont;
+  src: url("../fonts/TTCommons-Regular.ttf");
+}
+
+::-moz-selection {
+  background: #5bc0de;
+  color: #fff;
+}
+
+::selection {
+  background: #5bc0de;
+  color: #fff;
+}
+
 * {
-  font-family: "Neue Haas Unica",sans-serif;
-  font-size: 0.9rem;
-  text-transform: uppercase;
+  font-family: myFont;
+  scroll-behavior: smooth;
+  font-size: 1.03em;
+  line-height: 1.6;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
 }
 
-::-webkit-input-placeholder {
-  color: #ffffff;
+mark {
+  background-color: rgba(0, 0, 0, 0);
+  color: #17a2b8;
 }
 
-:-ms-input-placeholder {
-  color: #ffffff;
+ul {
+  list-style-type: none;
 }
 
-::-ms-input-placeholder {
-  color: #ffffff;
-}
-
-::placeholder {
-  color: #ffffff;
-}
-
-.b-dark {
-  background-color: #343a40;
-  color: #ffffff;
-}
-
-.b-light {
-  background-color: #ffffff;
-  color: #343a40;
-}
-
-.p-t-50 {
-  padding-top: 50px;
-}
-
-.p-b-50 {
-  padding-bottom: 50px;
-}
-
-.font-s-3 {
-  font-size: 3rem;
-}
-
-.font-s-2 {
-  font-size: 1.8rem;
-}
-
-#wrapper {
-  width: 100%;
-  margin: 0 auto;
-  padding: 0px;
-}
-
-#wrapper nav {
-  position: fixed;
-  z-index: 1;
-}
-
-#wrapper nav #logoNav {
-  width: 20%;
-}
-
-#wrapper .main {
-  background-image: url("../img/main.jpeg");
-  background-position: center;
-  background-repeat: repeat, no-repeat;
-  background-size: cover;
-  height: 600px;
-}
-
-#wrapper .main .main-text {
-  bottom: 20px;
-}
-
-#wrapper .tour-date table {
-  border-collapse: collapse;
-  width: 100%;
-}
-
-#wrapper .tour-date table td, #wrapper .tour-date table th {
-  padding: 10px;
-}
-
-#wrapper .tour-date table td a, #wrapper .tour-date table th a {
-  padding: 5px 20px;
-  border: 1px solid #343a40;
-}
-
-#wrapper .tour-date table td a:hover, #wrapper .tour-date table th a:hover {
-  color: #343a40;
-  background-color: #ffffff;
+a:hover {
   text-decoration: none;
 }
 
-#wrapper .newsletter {
-  background-image: url("../img/newsletter.png");
-  background-position: center;
-  background-repeat: repeat, no-repeat;
-  background-size: cover;
-  height: 400px;
+.p-50-0 {
+  padding: 50px 0px;
 }
 
-#wrapper .newsletter #newsEmail {
-  margin: 0px auto;
-  display: block;
+.aunderline {
+  text-decoration: underline;
+}
+
+.brd-none {
   border: none;
-  border-bottom: 2px solid #ffffff;
-  width: 100%;
-  line-height: 5;
+}
+
+textarea {
   resize: none;
-  background: transparent;
-  color: #ffffff;
 }
 
-#wrapper .newsletter #newsSend {
-  background-color: #ffffff;
-  color: #343a40;
-  border: 2px solid #ffffff;
-  font-size: 1.5em;
+#responsive-meni {
+  display: none;
+  z-index: 1000;
 }
 
-#wrapper .newsletter #newsSend:hover {
-  color: #ffffff;
-  background: transparent;
+.naslovna {
+  background-image: url(../img/naslovna1.png);
+  height: 100%;
+  padding: 150px 0px 150px 150px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
+
+.proizvodi {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.proizvodi a:hover {
+  border: 1px solid #dee2e6;
+}
+
+.proizvodi a img:hover {
+  -webkit-transform: scale(1.15);
+          transform: scale(1.15);
+}
+
+.o-nama {
+  background-image: url(../img/naslovna2.jpg);
+}
+
+.klijenti {
+  background-image: url(../img/naslovna3.jpg);
+}
+
+.koraci img {
+  max-width: 30%;
+}
+
+.dizajneri img {
+  max-width: 70%;
+}
+
+.order-form-input {
+  width: 100%;
+  padding: 8px 8px;
+  font-size: 0.9em;
+  border-color: #17a2b8;
+}
+
+#prikaziViseBlog {
+  margin: 0px auto;
+}
+
+#prikaziViseBlog p {
+  margin: 0px;
+}
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+.text {
+  color: #f2f2f2;
+  font-size: 30px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active {
+  background-color: #717171;
+}
+.mySlides img{
+  width: 100%;
+}
+#dots{
+  text-align: center;
+}
+.mySlides {display: none;}
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 3s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+/* body .sl-sh .slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+body .sl-sh .slideshow-container .mySlides {
+  display: none;
+}
+
+body .sl-sh .slideshow-container .mySlides .mySlides img {
+  width: 100%;
+}
+
+body .sl-sh .slideshow-container .mySlides .text {
+  color: #f2f2f2;
+  font-size: 30px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+body .sl-sh .slideshow-container .fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+}
+
+#dots {
+  text-align: center;
+}
+
+#dots .dot {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  -webkit-transition: background-color 0.6s ease;
+  transition: background-color 0.6s ease;
+}
+
+#dots .dot .active {
+  background-color: #717171;
+} */
 /*# sourceMappingURL=style.css.map */

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!--  animacija -->
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <title>Blog • Gavaltron</title>
+    <link rel="shortcut icon" href="img/icon.ico" type="image/ico">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous"/>
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css">
+    <meta name="keywords" content="gavaltron, blog, namestaja, vesti, novosti"/>
+    <meta name="description" content="Svakodnevo usavršavanje i rad na sebi dovodi do vrhunskih rezultata! Upoznajte naše dizajnere, proizvođače i njihove uzbudljive priče kao i nove tehnologije izrade nameštaja">
+</head>
+<body>
+    <nav class="navbar navbar-expand-sm navbar-dark bg-light d-flex justify-content-around">
+        <!-- sve sto sam dodao u html je ovaj div -->
+        <div id="responsive-meni" class="w-100 position-absolute d-sm-none">
+            <ul id="responsive-meni-ul" class="bg-light w-100">
+              
+            </ul>
+          </div>
+      
+          <a href="#" class="navbar-brand"><img src="img/logo.jpg" class="mw-100" alt="logo"/></a>
+      
+          <!-- a ovde sam samo sklonio te neke js funkcionalnosti za dugme od bootsa, i dole sam morao da jquery promenim u obican .min umesto .slim.min jer nema neke stvari koje su potrebne-->
+          <button class="navbar-toggler bg-info">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse nav-pills col-md-4" id="navbarMenu">
+              <ul id="navbarMenu-ul" class="navbar-nav container justify-content-around">
+      
+              </ul> 
+          </div>
+        <button type="button" id="korpa" class="btn btn-info btn-lg" data-toggle="modal" data-target=".bd-example-modal-lg">Poruči <i class="fa fa-shipping-fast"></i></button>
+        <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+              <section class="order-form my-4 mx-4">
+                <div class="container pt-4">
+                  <div class="row">
+                      <div class="col-12">
+                            <h1>Poručite brzo i jednostavno!</h1>
+                            <span class="pb-2 border-bottom d-block">Popunite formular ispod kako bi poručili željeni namestaj.</span>
+                        </div>
+                        <div class="col-12">
+                            
+                            <div class="row mx-4">
+                                <div class="col-12 mb-2">
+                                <label class="order-form-label mt-2">Lični podaci</label>
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                <input class="order-form-input border border-info" placeholder="Ime" required/>
+                                </div>
+                                <div class="col-12 col-sm-6 mt-2 mt-sm-0">
+                                <input class="order-form-input border border-info" placeholder="Prezime" required/>
+                                </div>
+                            </div>
+                    
+                            <div class="row mt-3 mx-4">
+                                <div class="col-12">
+                                <label class="order-form-label mt-2">Naziv nameštaja i tip</label>
+                                </div>
+                                <div class="col-12">
+                                <input class="order-form-input border border-info" placeholder="Npr: 'Lean' Sto" required/>
+                                </div>
+                            </div>
+                    
+                            <div class="row mt-3 mx-4">
+                                <div class="col-12">
+                                <label class="order-form-label mt-2">Datum poručivanja</label>
+                                </div>
+                                <div class="col-12">
+                                <input class="order-form-input border border-info" placeholder="Npr: 20.4.2020." id="date" required/>
+                                </div>
+                            </div>
+                    
+                            <div class="row mt-3 mx-4">
+                                <div class="col-12">
+                                <label class="order-form-label mt-2">Adresa</label>
+                                </div>
+                                <div class="col-12">
+                                <input class="order-form-input border border-info" placeholder="Ulica i broj" required/>
+                                </div>
+                                <div class="col-12 col-sm-6 mt-2 pr-sm-2">
+                                <input class="order-form-input border border-info" placeholder="Grad i poštanski broj" required/>
+                                </div>
+                                <div class="col-12 col-sm-6 mt-2 pl-sm-0">
+                                <input class="order-form-input border border-info" placeholder="Država" required/>
+                                </div>
+                            </div>
+                    
+                            <div class="row mt-3 mx-4">
+                                <div class="col-12">
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="defaultChecked2" checked/>
+                                        <label class="custom-control-label" for="defaultChecked2">Slažem se sa uslovim korišćenja.</label>
+                                    </div>
+                                </div>
+                            </div>
+                    
+                            <div class="row mt-3">
+                                <div class="col-12">
+                                    <button type="button" id="btnSubmit" class="btn btn-lg btn-info btn-min-width d-block mx-auto btn-submit">Poruči</button>
+                                </div>
+                                <div class="col-12 mt-4">
+                                  <p class="d-inline">Za odlazak na katalog klikni </p><a href="katalog.html" class="text-info" ><u>ovde.</u></a>
+                              </div>
+                            </div>
+                
+                        </div>
+                    </div>
+                </div>
+            </section>
+            </div>
+          </div>
+        </div>
+    </nav>
+    <div class="sl-sh container col-12 col-md-10 col-lg-9 p-50-0">
+        <div class="container col-12">
+            <div class="row">
+                <div class="col-12">
+                    <div id="slajder" class="slideshow-container">
+                
+                    </div>
+                <br>
+                
+                    <div id="dots">
+                      <span class="dot"></span> 
+                      <span class="dot"></span> 
+                      <span class="dot"></span> 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container col-10 p-50-0 pt-0">
+        <h2 class="text-center text-secondary pl-2 mt-5 mb-3 pt-2 pb-2 border-bottom">Novosti i članci</h2>
+        <div id="novosti" class="container col-12 d-flex justify-content-around flex-wrap p-50-0">
+
+        </div>
+    </div>
+    <footer>
+        <div class="container-fluid pb-0">
+          <div class="kontakt border-top border-dark container-fluid d-flex flex-wrap justify-content-between col-10 p-50-0">
+            <form class="p-50-0 pt-0 d-inline col-12 col-md-6 col-lg-5" action="#" method="GET">
+              <h4 class="text-info mb-4 text-center">Za pitanja</h4>
+              <div class="container-fluid col-12">
+                <div class="col d-flex">
+                  <input type="text" name="name" id="name" class="container brd-none border-bottom border-info" placeholder="Ime i prezime">
+                </div>
+                <div class="col d-flex">
+                  <input type="email" name="mail" id="mail" class="container brd-none border-bottom border-info mt-2" placeholder="Email">
+                </div>
+                <div class="col d-flex">
+                  <textarea name="text" id="text" cols="22" maxlength="200"  rows="3" class="container brd-none border-bottom border-info mt-2" placeholder="Poruka..."></textarea>
+                </div>
+                <div class="d-flex justify-content-center mt-3">
+                    <input type="submit" id="button" class="btn btn-info" value="Pošalji">
+                </div>      
+              </div>
+            </form>
+            <div class="container text-center col-12 col-md-6 col-lg-4">
+              <h4 class="text-info mb-4 text-center">Kontakt detalji</h4>
+              <ul class="list-unstyled">
+                <li>Gavaltron</li>
+                <li>Prvi sprat</li>
+                <li>16 Zdravka Čelara</li>
+                <li>Palilula, Beograd</li>
+                <li>Srbija</li>
+                <li class="text-info">
+                  <p class="font-weight-bold d-inline">Email: </p><a href="mailto:djordje.minic.135.19@ict.edu.rs" class="text-dark aunderline">gavaltron@gmail.com</a>
+                </li>
+                <li class="text-info">
+                  <p class="font-weight-bold d-inline">Telefon: </p><a href="tel:+381 69 131 24 20" class="text-dark aunderline">+381 69 131 24 20</a>
+                </li>
+              </ul>
+            </div>
+            <div class="p-50-0 pt-0 container col-lg-3 col-9 col-md-6">
+              <div class="logo-f d-flex justify-content-center">
+                <a href="index.html"><img src="img/logo.jpg" alt="logo"/></a>
+              </div>
+              <ul class="list-group list-group-flush text-center col-12" id="meniFuter">
+              </ul>
+            </div>
+            <div class="p-0 container mt-4 col-8 col-md-4 col-lg-6">
+                <h4 class="text-info mb-4 text-center">Društvene mreže</h4>
+                <ul class="p-0 d-flex justify-content-between flex-wrap" id="drustveneMreze">
+                </ul>
+            </div>
+          </div> 
+          <div class="container col-12">
+            <a href="oAutoru.html" class="d-inline text-info">O autoru</a>
+            <a href="css/style.sass" class="d-inline text-info ml-3 float-right">sass</a>
+            <a href="sitemap.xml" class="d-inline text-info ml-3 float-right">sitemap</a>
+            <a href="css/style.css" class="d-inline text-info float-right">css</a>
+            <p class="text-center border-top pt-3"><mark> © </mark> 2020 Đorđe Minić &nbsp;135<mark> / </mark>19</p>
+          </div> 
+        </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+        <script src="js/main.js"></script>
+</body>
