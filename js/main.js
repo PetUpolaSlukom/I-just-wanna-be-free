@@ -413,7 +413,7 @@ function ispisProizvida() {
         }
         else {
             if(!regImePrezime.test(document.kontakt.name.value)){
-                greska(document.kontakt.ime,"Ime i prezime nisu dobro napisani.");
+                greska(document.kontakt.name,"Ime i prezime nisu dobro napisani.");
                 indikatorGreske = true;
             }
         }
